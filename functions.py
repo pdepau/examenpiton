@@ -4,10 +4,51 @@ def read_data(datos):
     fichero = open(datos, mode="rt", encoding="utf-8")
 
 def split(diccionario):
-    print()
+    diccionarioWhite={}
+    diccionarioRed={}
+    for i in diccionario:
+        diccionarioTemporal=diccionario[i]
+        tipo=diccionarioTemporal['type']
+        if tipo == 'white':
+            vinoWhite = {
+                'fixed acidity':diccionarioTemporal['fixed acidity'],
+                'volatile acidity':diccionarioTemporal['volatile acidity'],
+                'citric acid':diccionarioTemporal['citric acid'],
+                'residual sugar':diccionarioTemporal['residual sugar'],
+                'chlorides':diccionarioTemporal['chlorides'],
+                'free sulfur dioxide':diccionarioTemporal['free sulfur dioxide'],
+                'total sulfur dioxide':diccionarioTemporal['total sulfur dioxide'],
+                'density':diccionarioTemporal['density'],
+                'pH':diccionarioTemporal['pH'],
+                'sulphates':diccionarioTemporal['sulphates'],
+                'alcohol':diccionarioTemporal['alcohol'],
+                'quality':diccionarioTemporal['quality']
+            }
+            diccionarioWhite[i]=vinoWhite
+            vinoWhite.clear()
+        if tipo == 'red':
+            vinoRed = {
+                'fixed acidity':diccionarioTemporal['fixed acidity'],
+                'volatile acidity':diccionarioTemporal['volatile acidity'],
+                'citric acid':diccionarioTemporal['citric acid'],
+                'residual sugar':diccionarioTemporal['residual sugar'],
+                'chlorides':diccionarioTemporal['chlorides'],
+                'free sulfur dioxide':diccionarioTemporal['free sulfur dioxide'],
+                'total sulfur dioxide':diccionarioTemporal['total sulfur dioxide'],
+                'density':diccionarioTemporal['density'],
+                'pH':diccionarioTemporal['pH'],
+                'sulphates':diccionarioTemporal['sulphates'],
+                'alcohol':diccionarioTemporal['alcohol'],
+                'quality':diccionarioTemporal['quality']
+            }
+            diccionarioRed[i]=vinoRed
+            vinoRed.clear()
+    return vinoWhite,vinoRed
+
 
 def reduce(diccionario,atributo):
-    print()
+    listaFinal=[]
+    for i in 
 
 def silhouette(lista1,lista2):
     print()
