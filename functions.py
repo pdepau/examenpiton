@@ -1,10 +1,24 @@
 import csv
 import math
 def read_data(datos):
+    diccionario = {}
+    posicion=0
+    vacio=False
     with open(datos, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
-        row.split()
+            linea=row.split(',')
+            for i in linea:
+                if i == '':
+                    vacio = True
+            if linea[0]!='type' and vacio==False:
+                nombre="Dato"+str(posicion)
+                nombre{
+                    
+                }
+
+
+
 
 def split(diccionario):
     diccionarioWhite={}
