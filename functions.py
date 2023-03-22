@@ -1,7 +1,10 @@
 import csv
 import math
 def read_data(datos):
-    fichero = open(datos, mode="rt", encoding="utf-8")
+    with open(datos, 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+        row.split()
 
 def split(diccionario):
     diccionarioWhite={}
@@ -48,7 +51,10 @@ def split(diccionario):
 
 def reduce(diccionario,atributo):
     listaFinal=[]
-    for i in 
+    for i in diccionario:
+        diccionarioTemporal=diccionario[i]
+        listaFinal.append(diccionarioTemporal[atributo])
+    return listaFinal
 
 def silhouette(lista1,lista2):
-    print()
+    
