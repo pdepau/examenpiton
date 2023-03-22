@@ -4,6 +4,7 @@ def read_data(datos):
     diccionario = {}
     posicion=0
     vacio=False
+    a=0
     with open(datos, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
@@ -13,9 +14,32 @@ def read_data(datos):
                     vacio = True
             if linea[0]!='type' and vacio==False:
                 nombre="Dato"+str(posicion)
-                nombre{
-                    
+                vino = {
+                   'type':linea[0],
+                   'fixed acidity':linea[1],
+                   'citric acid':linea[2],
+                   'residual sugar':linea[3],
+                   'chlorides':linea[4],
+                   'free sulfur dioxide':linea[5],
+                   'total sulfur dioxide':linea[6],
+                   'density':linea[7],
+                   'pH':linea[8],
+                   'sulphates':linea[9],
+                   'alcohol':linea[10],
+                   'quality':linea[11]
                 }
+                diccionario[nombre]=vino
+                vino.clear()
+            posicion= posicion+1
+    for j in diccionario:
+        a=a+1
+    if a>9:
+        b="no hay menos de 10 "
+    else:
+        raise ValueError("existen menos de 10")
+
+    return diccionario
+        
 
 
 
