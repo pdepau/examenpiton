@@ -95,4 +95,34 @@ def reduce(diccionario,atributo):
     return listaFinal
 
 def silhouette(lista1,lista2):
+    listaValoresMediosA=[]
+    listaValoresMediosB=[]
+    media=[]
+    numero = 0
+    for i in range(len(lista1)):
+        for j in range(len(lista1)):
+            if i !=j:
+                suma=lista1[i]-lista1[j]
+                absoluto=math.abs(suma)
+                potencia=math.pow(absoluto,2)
+                raiz=math.sqrt(potencia)
+                listaValoresMediosA.append(raiz)
+    
+    for k in range(len(lista1)):
+        for l in range(len(lista2)):
+            suma=lista1[k]-lista2[l]
+            absoluto=math.abs(suma)
+            potencia=math.pow(absoluto,2)
+            raiz=math.sqrt(potencia)
+            listaValoresMediosB.append(raiz)
+    for z in range(len(lista1)):
+        numerador=listaValoresMediosB[z]-listaValoresMediosA[z]
+        if listaValoresMediosA[z]>=listaValoresMediosB[z]:
+            denominador=listaValoresMediosA[z]
+        else:
+            denominador=listaValoresMediosB[z]
+        valor=numerador/denominador
+        media.append(valor)
+    for t in range(len(media)):
+        numero=
     
